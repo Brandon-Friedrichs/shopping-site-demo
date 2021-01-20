@@ -1,0 +1,51 @@
+nav {
+  display: flex;
+
+  border: 2px solid rgb(126, 125, 133);
+}
+
+ul {
+  display: flex;
+  list-style-type: none;
+  gap: 10px;
+}
+
+.shopping-banner {
+  display: flex;
+  justify-content: space-between;
+}
+
+h2 {
+  display: flex;
+  position: relative;
+}
+
+.item-map {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.items-container {
+  display: flex;
+  justify-content: center;
+}
+
+.item {
+  padding: 20px;
+  border: 1px solid rgb(97, 97, 100);
+}
+
+.cart-container {
+  display: flex;
+  justify-content: end;
+}
+
+.cart {
+  display: flex;
+  background-color: white;
+  position: absolute;
+  width: 10em;
+  flex-direction: column;
+  border: 2px solid black;
+}
