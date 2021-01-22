@@ -5,7 +5,8 @@ import Homepage from './Homepage';
 import ShoppingPage from './ShoppingPage';
 import CartPage from './CartPage';
 
-const Routes = () => {
+const Routes = (props) => {
+  const { cartArr, addToCart } = props;
   return (
     <BrowserRouter>
       <div>
@@ -21,10 +22,13 @@ const Routes = () => {
         </nav>
       </div>
       <Switch>
-        <Route exact path='/' component={App} />
         <Route exact path='/homepage' component={Homepage} />
-        <Route exact path='/shoppingpage' component={ShoppingPage} />
-        <Route exact path='/cartpage' component={CartPage} />
+        <Route exact path='/shoppingpage' render={() => (
+          <ShoppingPage cartArr={cartArr} addToCart={addToCart} />
+        )} />
+        <Route exact path='/cartpage' render={() => (
+          <CartPage cartArr={cartArr} addToCart={addToCart} />
+        )} />
       </Switch>
     </BrowserRouter>
   );
