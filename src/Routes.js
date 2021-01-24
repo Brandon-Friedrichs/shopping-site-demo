@@ -4,6 +4,7 @@ import App from './App';
 import Homepage from './Homepage';
 import ShoppingPage from './ShoppingPage';
 import CartPage from './CartPage';
+import ItemPage from './ItemPage';
 
 const Routes = (props) => {
   const { cartArr, addToCart } = props;
@@ -12,11 +13,14 @@ const Routes = (props) => {
       <div>
         <nav>
           <ul>
-            <li>
+            <li id='nav-home'>
               <Link to='/'>Home</Link>
             </li>
-            <li>
+            <li id='nav-shop'>
               <Link to='/shoppingpage'>Shopping</Link>
+            </li>
+            <li id='nav-cart'>
+              <Link to='/cartpage'>Cart</Link>
             </li>
           </ul>
         </nav>
@@ -28,6 +32,9 @@ const Routes = (props) => {
         )} />
         <Route exact path='/cartpage' render={() => (
           <CartPage cartArr={cartArr} addToCart={addToCart} />
+        )} />
+        <Route exact path='/shoppingpage/:title' render={(routeProps) => (
+          <ItemPage itemTitle={routeProps.match.params.title} addToCart={addToCart} />
         )} />
       </Switch>
     </BrowserRouter>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Item from './Item';
 
 const ItemsContainer = (props) => {
@@ -33,9 +34,13 @@ const ItemsContainer = (props) => {
 
   return (
     <div className="item-map">
-      {items.map((item) => (
-        <Item item={item} key={item.title} addToCart={addToCart} />
-      ))}
+      {items.map((item) => {
+        return (
+          <Link key={item.title} to={`/shoppingpage/${item.title}`}>
+            <Item item={item} key={item.title} addToCart={addToCart} />
+          </Link>
+        );
+      })}
     </div>
   );
 };

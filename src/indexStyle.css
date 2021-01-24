@@ -1,3 +1,7 @@
+html {
+  background-color: rgb(153, 174, 204);
+}
+
 nav {
   display: flex;
 
@@ -5,10 +9,38 @@ nav {
 }
 
 ul {
-  display: flex;
   list-style-type: none;
-  gap: 10px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
 }
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+#nav-cart {
+  position: relative;
+  float: right;
+}
+
+
+
+
 
 .shopping-banner {
   display: flex;
@@ -48,4 +80,31 @@ h2 {
   width: 10em;
   flex-direction: column;
   border: 2px solid black;
+}
+
+
+
+
+.itemPage-container {
+  display: flex;
+  background-color: darkgray;
+}
+
+.itemPage {
+  display: grid;
+  margin: 0 auto;
+  text-align: center;
+
+  background-color: rgb(202, 202, 202);
+}
+
+.itemPage-btn-container {
+  margin: 0 auto;
+}
+
+.itemPage-btn-counter {
+  width: 20%;
+}
+
+.itemPage-item-title {
 }
