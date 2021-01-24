@@ -7,26 +7,30 @@ const ItemsContainer = (props) => {
 
   let items = [
     {
-      title: 'Apples',
-      price: '2.99$',
+      title: 'Ray-Ban Eyeglasses',
+      price: '$180.00',
+      id: 1,
       qty: 1,
       borderStyle: '2px solid black',
     },
     {
-      title: 'Bread',
-      price: '4.99$',
+      title: 'Oakley Eyeglasses',
+      price: '$135.00',
+      id: 2,
       qty: 1,
       borderStyle: '2px solid black',
     },
     {
-      title: 'Eggs',
-      price: '7.99$',
+      title: 'Persol Eyeglasses',
+      price: '$294.00',
+      id: 3,
       qty: 1,
       borderStyle: '2px solid black',
     },
     {
-      title: 'Milk',
-      price: '5.20$',
+      title: 'Versace Eyeglasses',
+      price: '$277.00',
+      id: 4,
       qty: 1,
       borderStyle: '2px solid black',
     },

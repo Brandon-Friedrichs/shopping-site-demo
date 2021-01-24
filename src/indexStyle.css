@@ -103,8 +103,18 @@ h2 {
 }
 
 .itemPage-btn-counter {
-  width: 20%;
+  width: 12%;
 }
 
-.itemPage-item-title {
+.itemPage-btn-submit {
+  height: 100%;
+}
+
+.itemPage-img {
+  width: 400px;
+  height: auto;
+}
+
+.itemPage-item-price {
+  font-size: 25px;
 }
