@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 import Catalog from './Catalog.json';
-import Images from './Images';
 
 const ItemPage = (props) => {
   const { itemTitle, addToCart } = props;
   const [amount, setAmount] = useState(1);
 
-  const item = Catalog.find((item) => item.title == itemTitle);
-  const image = Images.find((img) => img.id == item.id);
+  const importAllImages = (r) => {
+    return r.keys().map(r);
+  }
 
-  const images = require.context('./assets');
-  console.log(images);
+  const images = importAllImages(require.context('./assets/images', false, /\.(png|jpe?g|svg|webp)$/));
+
+  const item = Catalog.find((item) => item.title == itemTitle);
 
   console.log(item);
-  console.log(image.src);
 
   const handleChange = (e) => {
     setAmount(e.target.value);
@@ -26,7 +26,7 @@ const ItemPage = (props) => {
         <h1 className='itemPage-item-title'>{item.title}</h1>
 
         <div className='itemPage-img-container'>
-          <img className='itemPage-img' src='./assets/oakley.webp'></img>
+          <img className='itemPage-img' src={images[item.id].default}></img>
         </div>
         
         <span className='itemPage-item-price'>{item.price}</span>
