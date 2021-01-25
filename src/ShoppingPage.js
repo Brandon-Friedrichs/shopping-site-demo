@@ -3,7 +3,7 @@ import ItemsContainer from './ItemsContainer';
 import ShoppingCart from './ShoppingCart';
 
 const ShoppingPage = (props) => {
-  const { cartArr, addToCart } = props;
+  const { cartArr, addToCart, importAllImages } = props;
 
   const [cartStatus, setCartStatus] = useState(false);
 
@@ -16,7 +16,7 @@ const ShoppingPage = (props) => {
   };
 
   return (
-    <div>
+    <div className='shoppingPage'>
       <div className="shopping-banner">
         <h2>Shopping Page</h2>
         <h3 onClick={showCart}>Cart ({cartArr.length})</h3>
@@ -31,7 +31,7 @@ const ShoppingPage = (props) => {
         )}
 
       <div className='items-container'>
-        <ItemsContainer addToCart={addToCart}></ItemsContainer>
+        <ItemsContainer addToCart={addToCart} importAllImages={importAllImages} ></ItemsContainer>
       </div>
     </div>
   );

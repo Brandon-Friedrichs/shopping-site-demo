@@ -1,29 +1,91 @@
 [
   {
     "title": "Ray-Ban Eyeglasses",
+    "subtitle": "RX5154",
     "price": "$180.00",
     "id": 1,
+    "imgId": "raybanrx5154",
     "qty": 1,
     "borderStyle": "2px solid black"
   },
   {
     "title": "Oakley Eyeglasses",
+    "subtitle": "OX8156",
     "price": "$135.00",
     "id": 2,
+    "imgId": "oakleyox8156",
     "qty": 1,
     "borderStyle": "2px solid black"
   },
   {
     "title": "Persol Eyeglasses",
+    "subtitle": "PO3212V",
     "price": "$294.00",
     "id": 3,
+    "imgId": "persolpo3212v",
     "qty": 1,
     "borderStyle": "2px solid black"
   },
   {
     "title": "Versace Eyeglasses",
+    "subtitle": "VE1257",
     "price": "$277.00",
     "id": 4,
+    "imgId": "versaceve1257",
+    "qty": 1,
+    "borderStyle": "2px solid black"
+  },
+  {
+    "title": "Michael Kors",
+    "subtitle": "MK4058 Caracas",
+    "price": "$128.00",
+    "id": 5,
+    "imgId": "korsmk4058",
+    "qty": 1,
+    "borderStyle": "2px solid black"
+  },
+  {
+    "title": "Vogue",
+    "subtitle": "VO5030",
+    "price": "$125.00",
+    "id": 6,
+    "imgId": "voguevo5030",
+    "qty": 1,
+    "borderStyle": "2px solid black"
+  },
+  {
+    "title": "Sferoflex",
+    "subtitle": "SF2086",
+    "price": "$104.00",
+    "id": 7,
+    "imgId": "sferoflexsf2086",
+    "qty": 1,
+    "borderStyle": "2px solid black"
+  },
+  {
+    "title": "Burberry",
+    "subtitle": "BE2301",
+    "price": "$275.00",
+    "id": 8,
+    "imgId": "burberrybe2301",
+    "qty": 1,
+    "borderStyle": "2px solid black"
+  },
+  {
+    "title": "Gucci",
+    "subtitle": "GC001158",
+    "price": "$360.00",
+    "id": 9,
+    "imgId": "guccigc001158",
+    "qty": 1,
+    "borderStyle": "2px solid black"
+  },
+  {
+    "title": "Ralph",
+    "subtitle": "RA7044",
+    "price": "$154.00",
+    "id": 10,
+    "imgId": "ralphra7044",
     "qty": 1,
     "borderStyle": "2px solid black"
   }

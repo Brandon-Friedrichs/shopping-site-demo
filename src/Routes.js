@@ -7,7 +7,7 @@ import CartPage from './CartPage';
 import ItemPage from './ItemPage';
 
 const Routes = (props) => {
-  const { cartArr, addToCart } = props;
+  const { cartArr, addToCart, importAllImages } = props;
   return (
     <BrowserRouter>
       <div>
@@ -28,13 +28,13 @@ const Routes = (props) => {
       <Switch>
         <Route exact path='/homepage' component={Homepage} />
         <Route exact path='/shoppingpage' render={() => (
-          <ShoppingPage cartArr={cartArr} addToCart={addToCart} />
+          <ShoppingPage cartArr={cartArr} addToCart={addToCart} importAllImages={importAllImages} />
         )} />
         <Route exact path='/cartpage' render={() => (
           <CartPage cartArr={cartArr} addToCart={addToCart} />
         )} />
         <Route exact path='/shoppingpage/:title' render={(routeProps) => (
-          <ItemPage itemTitle={routeProps.match.params.title} addToCart={addToCart} />
+          <ItemPage itemTitle={routeProps.match.params.title} addToCart={addToCart} importAllImages={importAllImages} />
         )} />
       </Switch>
     </BrowserRouter>

@@ -2,6 +2,10 @@ html {
   background-color: rgb(153, 174, 204);
 }
 
+a:link {
+  text-decoration: none;
+}
+
 nav {
   display: flex;
 
@@ -54,13 +58,15 @@ h2 {
 
 .item-map {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
+  margin: 0 auto;
   gap: 10px;
 }
 
 .items-container {
   display: flex;
-  justify-content: center;
+  text-align: center;
 }
 
 .item {
@@ -81,6 +87,35 @@ h2 {
   flex-direction: column;
   border: 2px solid black;
 }
+
+
+
+
+
+
+.shoppingPage {
+  height: 100%;
+}
+
+
+
+
+
+
+.itemShoppingPage-container {
+  background-color: darkgray;
+}
+
+.itemShoppingPage {
+  color: #111;
+}
+
+.itemShoppingPage-img {
+  width: 350px;
+  height: auto;
+}
+
+
 
 
 

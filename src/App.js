@@ -16,9 +16,15 @@ function App() {
     console.log(cartArr);
   };
 
+  const importAllImages = (r) => {
+    let images = {}; 
+    r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
+    return images;
+  }
+
   return (
     <div className="App">
-      <Routes cartArr={cartArr} addToCart={addToCart} />
+      <Routes cartArr={cartArr} addToCart={addToCart} importAllImages={importAllImages} />
     </div>
   );
 }
