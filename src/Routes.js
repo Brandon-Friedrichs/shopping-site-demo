@@ -20,7 +20,7 @@ const Routes = (props) => {
               <Link to='/shoppingpage'>Shopping</Link>
             </li>
             <li id='nav-cart'>
-              <Link to='/cartpage'>Cart</Link>
+              <Link to='/cartpage'>Cart ({cartArr.length})</Link>
             </li>
           </ul>
         </nav>
@@ -31,7 +31,7 @@ const Routes = (props) => {
           <ShoppingPage cartArr={cartArr} addToCart={addToCart} importAllImages={importAllImages} />
         )} />
         <Route exact path='/cartpage' render={() => (
-          <CartPage cartArr={cartArr} addToCart={addToCart} />
+          <CartPage cartArr={cartArr} addToCart={addToCart} importAllImages={importAllImages} />
         )} />
         <Route exact path='/shoppingpage/:title' render={(routeProps) => (
           <ItemPage itemTitle={routeProps.match.params.title} addToCart={addToCart} importAllImages={importAllImages} />
