@@ -25,7 +25,7 @@ const ItemPage = (props) => {
           <h1 className='itemPage-item-title'>{item.title}</h1>
           <h3 className='itemPage-item-subtitle'>{item.subtitle}</h3>
           <p className='itemPage-item-desc'>Desc</p>
-          <span className='itemPage-item-price'>{item.price}</span>
+          <span className='itemPage-item-price'>${item.price}</span>
 
           <div className='btn-container'>
             <input type='number' className='btn-counter' min='1' max='99' onChange={handleChange} defaultValue='1' />

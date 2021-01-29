@@ -15,12 +15,16 @@ const Item = (props) => {
     <div className='itemShoppingPage-container'>
       <div className='itemShoppingPage'>
 
-        <div className='itemShoppingPage-img-container'>
+        <div className='img-container'>
           <img className='itemShoppingPage-img' src={images[item.imgId + '.webp'].default} ></img>
         </div>
 
-        <h3 className='itemShoppingPage-item-title'>{item.title}</h3>
-        <span className='itemShoppingPage-item-price'>{item.price}</span>
+        <div className='info-container'>
+          <h3 className='item-title'>{item.title}</h3>
+          <h4 className='item-subtitle'>{item.subtitle}</h4>
+          <span className='item-price'>${item.price}</span>
+        </div>
+
 
       </div> 
     </div>
