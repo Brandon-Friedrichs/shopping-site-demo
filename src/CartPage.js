@@ -2,15 +2,27 @@ import React, { useState } from 'react';
 import Item from './Item';
 
 const CartPage = (props) => {
-  const { cartArr, addToCart, importAllImages } = props;
-  console.log(cartArr)
-
+  const { cartArr, addToCart, importAllImages, editQtyInCart } = props;
+  const [subTotal, setSubTotal] = useState(0);
   const images = importAllImages(require.context('./assets/images', false, /\.(png|jpe?g|svg|webp)$/));
 
   const addZeroes = (num) => {
     const dec = num.split('.')[1];
     const len = dec && dec.length > 2 ? dec.length : 2;
     return Number(num).toFixed(len);
+  }
+
+  const handleChange = (item, e) => {
+    console.log(item)
+    console.log(e.target.value)
+    editQtyInCart(item, e.target.value);
+
+    //element will update because useState is being called, find a way to work it
+    //setSubTotal(e.target.value);
+  };
+
+  const subtotalCalc = (item) => {
+    return item.qty * item.price
   }
 
   return (
@@ -37,8 +49,10 @@ const CartPage = (props) => {
                   </th>
                   <td className='item-title'>{item.title} {item.subtitle}</td>
                   <td className='item-price'>${item.price}</td>
-                  <td className='item-qty'>{item.qty}</td>
-                  <td className='item-subtotal'>${item.qty * item.price}</td>
+                  <td className='item-qty'>
+                    <input type='number' className='btn-counter' min='1' max='99' onChange={handleChange.bind(this, item)} defaultValue={item.qty} />
+                  </td>
+                  <td className='item-subtotal'>${subtotalCalc(item)}</td>
                 </tr>
               )
             })}

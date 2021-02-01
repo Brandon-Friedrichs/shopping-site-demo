@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import App from './App';
 import Homepage from './Homepage';
@@ -7,7 +7,12 @@ import CartPage from './CartPage';
 import ItemPage from './ItemPage';
 
 const Routes = (props) => {
-  const { cartArr, addToCart, importAllImages } = props;
+  const { cartArr, addToCart, importAllImages, editQtyInCart } = props;
+
+  useEffect(() => {
+    console.log('Render');
+  });
+
   return (
     <BrowserRouter>
       <div>
@@ -20,7 +25,7 @@ const Routes = (props) => {
               <Link to='/shoppingpage'>Shopping</Link>
             </li>
             <li id='nav-cart'>
-              <Link to='/cartpage'>Cart ({cartArr.length})</Link>
+              <Link to='/cartpage'>Cart ({cartArr.reduce((a,b) => a + b.qty, 0)})</Link>
             </li>
           </ul>
         </nav>
@@ -31,7 +36,7 @@ const Routes = (props) => {
           <ShoppingPage cartArr={cartArr} addToCart={addToCart} importAllImages={importAllImages} />
         )} />
         <Route exact path='/cartpage' render={() => (
-          <CartPage cartArr={cartArr} addToCart={addToCart} importAllImages={importAllImages} />
+          <CartPage cartArr={cartArr} addToCart={addToCart} importAllImages={importAllImages} editQtyInCart={editQtyInCart} />
         )} />
         <Route exact path='/shoppingpage/:title' render={(routeProps) => (
           <ItemPage itemTitle={routeProps.match.params.title} addToCart={addToCart} importAllImages={importAllImages} />

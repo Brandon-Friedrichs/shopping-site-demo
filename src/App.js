@@ -5,16 +5,22 @@ function App() {
   const [cartArr, setCartArr] = useState([]);
 
   const addToCart = (cartItem, amount) => {
-    console.log(amount)
-    console.log(cartItem);
     if (cartArr.some(item => item.title === cartItem.title)) {
-      cartArr[cartArr.findIndex(item => item.title === cartItem.title)].qty += parseInt(amount);
+      let newArr = cartArr;
+      newArr[newArr.findIndex(item => item.title === cartItem.title)].qty += parseInt(amount);
+      setCartArr(newArr);
+      console.log('render')
     } else {
       cartItem.qty = parseInt(amount);
       setCartArr((prevArr) => [...prevArr, cartItem]);
     }
-    console.log(cartArr);
   };
+
+  const editQtyInCart = (cartItem, amount) => {
+    let newArr = cartArr;
+    newArr[newArr.findIndex(item => item.title === cartItem.title)].qty = parseInt(amount);
+    setCartArr(newArr);
+  }
 
   const importAllImages = (r) => {
     let images = {}; 
@@ -23,8 +29,8 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <Routes cartArr={cartArr} addToCart={addToCart} importAllImages={importAllImages} />
+    <div className="app">
+      <Routes cartArr={cartArr} addToCart={addToCart} importAllImages={importAllImages} editQtyInCart={editQtyInCart} />
     </div>
   );
 }

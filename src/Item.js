@@ -9,8 +9,6 @@ const Item = (props) => {
 
   const images = importAllImages(require.context('./assets/images', false, /\.(png|jpe?g|svg|webp)$/));
 
-  console.log(item)
-
   return (
     <div className='itemShoppingPage-container'>
       <div className='itemShoppingPage'>
