@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Catalog from './Catalog.json';
+import RelatedProducts from './RelatedProducts';
 
 const ItemPage = (props) => {
   const { itemTitle, addToCart, importAllImages } = props;
@@ -13,6 +14,7 @@ const ItemPage = (props) => {
 
   const handleChange = (e) => {
     setAmount(e.target.value);
+    console.log(Catalog.length)
   };
 
   const submitToCart = (item, amount) => {
@@ -39,8 +41,6 @@ const ItemPage = (props) => {
         <div></div>
       }
       <div className='itemPage'>
-
-        
 
         <div className='img-container'>
           <img className='itemPage-img' src={images[item.imgId + '.webp'].default}></img>
@@ -74,10 +74,10 @@ const ItemPage = (props) => {
         </div>
 
         <div className='related-products-container'>
-          related prods
           <div className='related-products-header'>
-            related prods header
+            Related Products
           </div>
+          <RelatedProducts importAllImages={importAllImages} currentItem={item.id} dismissNotification={dismissNotification} />
         </div>
 
       </div>

@@ -9,7 +9,6 @@ function App() {
       let newArr = cartArr;
       newArr[newArr.findIndex(item => item.title === cartItem.title)].qty += parseInt(amount);
       setCartArr(newArr);
-      console.log('render')
     } else {
       cartItem.qty = parseInt(amount);
       setCartArr((prevArr) => [...prevArr, cartItem]);

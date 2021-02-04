@@ -15,14 +15,20 @@ const CartPage = (props) => {
   const handleChange = (item, e) => {
     console.log(item)
     console.log(e.target.value)
+
+    
     editQtyInCart(item, e.target.value);
 
     //element will update because useState is being called, find a way to work it
-    //setSubTotal(e.target.value);
+    console.log(e.target.value * item.price)
+    let product = (e.target.value * item.price)
+    setSubTotal(e.target.value * item.price);
+    console.log(subTotal)
   };
 
   const subtotalCalc = (item) => {
-    return item.qty * item.price
+    let prod = item.qty * item.price;
+    return prod
   }
 
   return (

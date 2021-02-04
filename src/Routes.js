@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+import { Eyeglasses, Cart3 } from 'react-bootstrap-icons';
 import App from './App';
 import Homepage from './Homepage';
 import ShoppingPage from './ShoppingPage';
@@ -18,14 +19,17 @@ const Routes = (props) => {
       <div>
         <nav>
           <ul>
+            <li id='nav-icon-eyeglasses'>
+              <Eyeglasses />
+            </li>
             <li id='nav-home'>
-              <Link to='/'>Home</Link>
+              <Link to='/'> <Eyeglasses /> Home</Link>
             </li>
             <li id='nav-shop'>
               <Link to='/shoppingpage'>Shopping</Link>
             </li>
             <li id='nav-cart'>
-              <Link to='/cartpage'>Cart ({cartArr.reduce((a,b) => a + b.qty, 0)})</Link>
+              <Link to='/cartpage'><Cart3 className='cart-icon' /> ({cartArr.reduce((a,b) => a + b.qty, 0)})</Link>
             </li>
           </ul>
         </nav>

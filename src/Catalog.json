@@ -1,6 +1,6 @@
 [
   {
-    "title": "Ray-Ban Eyeglasses",
+    "title": "Ray-Ban",
     "subtitle": "RX5154",
     "price": "180.00",
     "id": 1,
@@ -9,7 +9,7 @@
     "borderStyle": "2px solid black"
   },
   {
-    "title": "Oakley Eyeglasses",
+    "title": "Oakley",
     "subtitle": "OX8156",
     "price": "135.00",
     "id": 2,
@@ -18,7 +18,7 @@
     "borderStyle": "2px solid black"
   },
   {
-    "title": "Persol Eyeglasses",
+    "title": "Persol",
     "subtitle": "PO3212V",
     "price": "294.00",
     "id": 3,
@@ -27,7 +27,7 @@
     "borderStyle": "2px solid black"
   },
   {
-    "title": "Versace Eyeglasses",
+    "title": "Versace",
     "subtitle": "VE1257",
     "price": "277.00",
     "id": 4,
