@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Link, Redirect } from 'react-router-dom';
 import { Eyeglasses, Cart3 } from 'react-bootstrap-icons';
 import App from './App';
 import Homepage from './Homepage';
@@ -19,11 +19,8 @@ const Routes = (props) => {
       <div>
         <nav>
           <ul>
-            <li id='nav-icon-eyeglasses'>
-              <Eyeglasses />
-            </li>
             <li id='nav-home'>
-              <Link to='/'> <Eyeglasses /> Home</Link>
+              <Link to='/homepage'> <Eyeglasses /> Home</Link>
             </li>
             <li id='nav-shop'>
               <Link to='/shoppingpage'>Shopping</Link>
@@ -35,6 +32,9 @@ const Routes = (props) => {
         </nav>
       </div>
       <Switch>
+        <Route exact path='/'>
+          <Redirect to='/homepage' />
+        </Route>
         <Route exact path='/homepage' component={Homepage} />
         <Route exact path='/shoppingpage' render={() => (
           <ShoppingPage cartArr={cartArr} addToCart={addToCart} importAllImages={importAllImages} />
