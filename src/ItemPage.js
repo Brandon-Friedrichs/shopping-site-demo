@@ -14,7 +14,7 @@ const ItemPage = (props) => {
 
   const handleChange = (e) => {
     setAmount(e.target.value);
-    console.log(Catalog.length)
+    console.log(amount)
   };
 
   const submitToCart = (item, amount) => {
