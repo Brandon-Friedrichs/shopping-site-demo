@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Gem, Palette, Eyeglasses } from 'react-bootstrap-icons';
+import welcomeImg from './assets/images/eyeglasses-on-table.jpg';
 
 const Homepage = () => {
   
@@ -7,9 +9,7 @@ const Homepage = () => {
     <div className='homepage-container'>
 
       <div className='welcome-container'>
-        <div className='welcome-img'>
-          Eyeglasses image here
-        </div>
+        <img className='welcome-img' src={welcomeImg} />
 
         <div className='welcome-msg'>
           <h2>First-rate Eyeglasses at Affordable Prices</h2>
@@ -33,6 +33,11 @@ const Homepage = () => {
         <div className='details-cards-container'>
           <div className='details-card-space'>
             <div className='details-card'>
+              <div className='logo-container'>
+                <div className='logo-spot'>
+                  <Gem />
+                </div>
+              </div>
               <h5>High-quality</h5>
               <p>Both our frames and lenses are made with superior material, scratch 
                 resistant and durable.
@@ -41,17 +46,27 @@ const Homepage = () => {
           </div>
           <div className='details-card-space'>
             <div className='details-card'>
-              <h5>The Latest Designs and Styles</h5>
-              <p>The variety of eyeglasses on our website includes the very cutting
-                edge in fashion.
+              <div className='logo-container'>
+                <div className='logo-spot'>
+                  <Palette />
+                </div>
+              </div>
+              <h5>Latest Designs</h5>
+              <p>The variety of eyeglasses on our website includes the latest designs
+                and styles in fashion.
               </p>
             </div>
           </div>
           <div className='details-card-space'>
             <div className='details-card'>
+              <div className='logo-container'>
+                <div className='logo-spot'>
+                  <Eyeglasses />
+                </div>
+              </div>
               <h5>Built to Fit You</h5>
               <p>Select your frames, and we will ensure the lenses meet your exact
-                prescription needs guaranteed.
+                prescription needs.
               </p>
             </div>
           </div>

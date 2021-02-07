@@ -20,7 +20,7 @@ const Routes = (props) => {
         <nav>
           <ul>
             <li id='nav-home'>
-              <Link to='/homepage'> <Eyeglasses /> Home</Link>
+              <Link to='/homepage'>Home</Link>
             </li>
             <li id='nav-shop'>
               <Link to='/shoppingpage'>Shopping</Link>

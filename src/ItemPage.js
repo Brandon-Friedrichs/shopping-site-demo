@@ -18,6 +18,7 @@ const ItemPage = (props) => {
   };
 
   const submitToCart = (item, amount) => {
+    console.log(amount)
     addToCart(item, amount);
     setItemAdded(true);
   };
