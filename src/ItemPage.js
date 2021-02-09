@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { CheckCircleFill, XSquareFill } from 'react-bootstrap-icons';
 import Catalog from './Catalog.json';
 import RelatedProducts from './RelatedProducts';
 
@@ -14,11 +15,9 @@ const ItemPage = (props) => {
 
   const handleChange = (e) => {
     setAmount(e.target.value);
-    console.log(amount)
   };
 
   const submitToCart = (item, amount) => {
-    console.log(amount)
     addToCart(item, amount);
     setItemAdded(true);
   };
@@ -27,15 +26,21 @@ const ItemPage = (props) => {
     setItemAdded(false)
   }
 
+  console.log('newpage')
+  console.log(item)
+  console.log(item.id)
+
   return (
     <div className='itemPage-container'>
       {itemAdded ? 
         <div className='itemAdded-container'>
-          <div>Check</div>
+          <div className='check-container'>
+            <CheckCircleFill className='check-icon' />
+          </div>
           <p>"{item.title}, {item.subtitle}" has been added to your cart.</p>
           <div className='btn-container'>
             <Link to='/cartpage' className='viewCart-btn'>View Cart</Link>
-            <button className='dismiss-btn' onClick={dismissNotification}>x</button>
+            <button className='dismiss-btn' onClick={dismissNotification}><XSquareFill className='x-icon' /></button>
           </div>
         </div>
         :
