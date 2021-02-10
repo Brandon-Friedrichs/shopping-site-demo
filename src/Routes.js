@@ -1,18 +1,13 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter, Switch, Route, Link, Redirect } from 'react-router-dom';
-import { Eyeglasses, Cart3 } from 'react-bootstrap-icons';
-import App from './App';
+import { Cart3 } from 'react-bootstrap-icons';
 import Homepage from './Homepage';
 import ShoppingPage from './ShoppingPage';
 import CartPage from './CartPage';
 import ItemPage from './ItemPage';
 
 const Routes = (props) => {
-  const { cartArr, addToCart, importAllImages, editQtyInCart } = props;
-
-  useEffect(() => {
-    console.log('Render');
-  });
+  const { cartArr, addToCart, importAllImages, editQtyInCart, removeFromCart, cartCount } = props;
 
   return (
     <BrowserRouter>
@@ -26,7 +21,7 @@ const Routes = (props) => {
               <Link to='/shoppingpage'>Shopping</Link>
             </li>
             <li id='nav-cart'>
-              <Link to='/cartpage'><Cart3 className='cart-icon' /> ({cartArr.reduce((a,b) => a + b.qty, 0)})</Link>
+              <Link to='/cartpage'><Cart3 className='cart-icon' /> ({cartCount})</Link>
             </li>
           </ul>
         </nav>
@@ -40,7 +35,7 @@ const Routes = (props) => {
           <ShoppingPage cartArr={cartArr} addToCart={addToCart} importAllImages={importAllImages} />
         )} />
         <Route exact path='/cartpage' render={() => (
-          <CartPage cartArr={cartArr} addToCart={addToCart} importAllImages={importAllImages} editQtyInCart={editQtyInCart} />
+          <CartPage cartArr={cartArr} importAllImages={importAllImages} editQtyInCart={editQtyInCart} removeFromCart={removeFromCart} />
         )} />
         <Route exact path='/shoppingpage/:title' render={(routeProps) => (
           <ItemPage itemTitle={routeProps.match.params.title} addToCart={addToCart} importAllImages={importAllImages} />

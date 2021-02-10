@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { CheckCircleFill, XSquareFill } from 'react-bootstrap-icons';
+import { CheckCircleFill, XSquareFill, NutFill, Eyeglasses, EyeFill } from 'react-bootstrap-icons';
 import Catalog from './Catalog.json';
 import RelatedProducts from './RelatedProducts';
 
@@ -11,7 +11,7 @@ const ItemPage = (props) => {
 
   const images = importAllImages(require.context('./assets/images', false, /\.(png|jpe?g|svg|webp)$/));
 
-  const item = Catalog.find((item) => item.title == itemTitle);
+  const item = Catalog.find((item) => item.title === itemTitle);
 
   const handleChange = (e) => {
     setAmount(e.target.value);
@@ -26,10 +26,6 @@ const ItemPage = (props) => {
     setItemAdded(false)
   }
 
-  console.log('newpage')
-  console.log(item)
-  console.log(item.id)
-
   return (
     <div className='itemPage-container'>
       {itemAdded ? 
@@ -38,10 +34,8 @@ const ItemPage = (props) => {
             <CheckCircleFill className='check-icon' />
           </div>
           <p>"{item.title}, {item.subtitle}" has been added to your cart.</p>
-          <div className='btn-container'>
-            <Link to='/cartpage' className='viewCart-btn'>View Cart</Link>
-            <button className='dismiss-btn' onClick={dismissNotification}><XSquareFill className='x-icon' /></button>
-          </div>
+          <Link to='/cartpage' className='viewCart-btn'>View Cart</Link>
+          <button className='dismiss-btn' onClick={dismissNotification}><XSquareFill className='x-icon' /></button>
         </div>
         :
         <div></div>
@@ -49,13 +43,23 @@ const ItemPage = (props) => {
       <div className='itemPage'>
 
         <div className='img-container'>
-          <img className='itemPage-img' src={images[item.imgId + '.webp'].default}></img>
+          <img className='itemPage-img' src={images[item.imgId + '.webp'].default} alt='The pair of eyeglasses' ></img>
         </div>
 
         <div className='itemPage-info-container'>
           <h1 className='itemPage-item-title'>{item.title}</h1>
           <h3 className='itemPage-item-subtitle'>{item.subtitle}</h3>
-          <p className='itemPage-item-desc'>Desc</p>
+          <div className='itemPage-item-points'>
+            <div className='point'>
+              <NutFill className='material-icon' /> Frame Material: {item.material}
+            </div>
+            <div className='point'>
+              <Eyeglasses /> Frame Shape: {item.shape}
+            </div>
+            <div className='point'>
+              <EyeFill /> Custom Prescription Lenses
+            </div>
+          </div>
           <span className='itemPage-item-price'>${item.price}</span>
 
           <div className='btn-container'>

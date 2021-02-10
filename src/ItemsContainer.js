@@ -4,7 +4,7 @@ import Item from './Item';
 import Catalog from './Catalog.json';
 
 const ItemsContainer = (props) => {
-  const {addToCart, importAllImages} = props;
+  const {importAllImages} = props;
 
   let items = Catalog;
 
@@ -13,7 +13,7 @@ const ItemsContainer = (props) => {
       {items.map((item) => {
         return (
           <Link key={item.title} to={`/shoppingpage/${item.title}`}>
-            <Item item={item} key={item.title} addToCart={addToCart} importAllImages={importAllImages} />
+            <Item item={item} key={item.title} importAllImages={importAllImages} />
           </Link>
         );
       })}

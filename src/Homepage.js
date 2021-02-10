@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Gem, Palette, Eyeglasses } from 'react-bootstrap-icons';
 import welcomeImg from './assets/images/eyeglasses-on-table.jpg';
@@ -9,7 +9,7 @@ const Homepage = () => {
     <div className='homepage-container'>
 
       <div className='welcome-container'>
-        <img className='welcome-img' src={welcomeImg} />
+        <img className='welcome-img' src={welcomeImg} alt='' />
 
         <div className='welcome-msg'>
           <h2>First-rate Eyeglasses at Affordable Prices</h2>

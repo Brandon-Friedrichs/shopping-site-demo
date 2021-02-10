@@ -1,11 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const Item = (props) => {
-  const { item, addToCart, importAllImages } = props;
-
-  const itemStyle = {
-    border: item.borderStyle,
-  };
+  const { item, importAllImages } = props;
 
   const images = importAllImages(require.context('./assets/images', false, /\.(png|jpe?g|svg|webp)$/));
 
@@ -14,7 +10,7 @@ const Item = (props) => {
       <div className='itemShoppingPage'>
 
         <div className='img-container'>
-          <img className='itemShoppingPage-img' src={images[item.imgId + '.webp'].default} ></img>
+          <img className='itemShoppingPage-img' src={images[item.imgId + '.webp'].default} alt='The pair of eyeglasses' ></img>
         </div>
 
         <div className='info-container'>

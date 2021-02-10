@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Catalog from './Catalog.json';
 
@@ -9,7 +9,7 @@ const RelatedProducts = (props) => {
 
   while (items.current.length < 4) {
     let itemId = Math.floor(Math.random() * Catalog.length) + 1;
-    let item = Catalog.find((item) => item.id == itemId);
+    let item = Catalog.find((item) => item.id === itemId);
     if (items.current.indexOf(item) === -1 && item.id !== currentItem) items.current.push(item);
   }
 
@@ -26,7 +26,7 @@ const RelatedProducts = (props) => {
     items.current = [];
     while (items.current.length < 4) {
       let itemId = Math.floor(Math.random() * Catalog.length) + 1;
-      let item = Catalog.find((item) => item.id == itemId);
+      let item = Catalog.find((item) => item.id === itemId);
       if (items.current.indexOf(item) === -1 && item.id !== selectedProduct) items.current.push(item);
     }
   }
@@ -45,7 +45,7 @@ const RelatedProducts = (props) => {
             }}
           >
             <div className='img-container'>
-              <img className='itemShoppingPage-img' src={images[item.imgId + '.webp'].default} ></img>
+              <img className='itemShoppingPage-img' src={images[item.imgId + '.webp'].default} alt='The pair of eyeglasses' ></img>
             </div>
 
             <div className='info-container'>

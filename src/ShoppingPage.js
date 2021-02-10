@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ItemsContainer from './ItemsContainer';
-import ShoppingCart from './ShoppingCart';
 
 const ShoppingPage = (props) => {
-  const { cartArr, addToCart, importAllImages } = props;
+  const {importAllImages} = props;
 
   return (
     <div className='shoppingPage'>
@@ -12,7 +11,7 @@ const ShoppingPage = (props) => {
       </div>
 
       <div className='items-container'>
-        <ItemsContainer addToCart={addToCart} importAllImages={importAllImages} ></ItemsContainer>
+        <ItemsContainer importAllImages={importAllImages} ></ItemsContainer>
       </div>
     </div>
   );
